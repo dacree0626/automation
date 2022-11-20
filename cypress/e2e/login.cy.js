@@ -55,7 +55,7 @@ it('play with the scrollbar', () => {
 //   .trigger('change').click()
 })
 
-it.only('opens the alert modal', () => {
+it('opens the alert modal', () => {
     
 
     loginPage.navigate('https://trytestingthis.netlify.app/')
