@@ -2,3 +2,4 @@ trelloapp-master
 cypress/e2e/automationpractice.cy.js
 cypress/e2e/assertions.cy.js
 node_modules
+videos
