@@ -27,5 +27,5 @@ it.only('uses the check box for hammers', async () => {
     loginPage.navigate('https://practicesoftwaretesting.com/')
     await cy.scrollTo(0,500)
     // cy.get('.collapse > :nth-child(12)').should('exist')
-    await cy.get('[data-test="category-3"]').click()
+    cy.get(':nth-child(13) > ul').check()
 })
