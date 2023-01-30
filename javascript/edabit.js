@@ -174,7 +174,7 @@ console.log(sevenBoom([1,2,3,4,5,6,5,9979]))
 
 function timeRegEx(example){
     console.log(example)
-    const re = /^(0?[1-9]|1[0-2]):[0-5][0-9]$/g
+    var re = new RegExp("^(0?[1-9]|1[0-2]):[0-5][0-9]$")
     console.log(re)
     let found = example.match(re)
     console.log(found)
