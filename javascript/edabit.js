@@ -174,13 +174,37 @@ console.log(sevenBoom([1,2,3,4,5,6,5,9979]))
 
 function timeRegEx(example){
     console.log(example)
-    var re = new RegExp("^(0?[1-9]|1[0-2]):[0-5][0-9]$")
+    // var re = new RegExp("0?[1-9]|1[0-2]:[0-5][0-9]")
+    re = / [0-2]?[0-9]:[0-5][0-9]/
     console.log(re)
     let found = example.match(re)
-    console.log(found)
-    return found
+    if(found)
+        return found
+    else   
+        return "friend"
 }
-console.log(timeRegEx("Breakfast at 09:00 in the room 123:456"))
+console.log(timeRegEx("Breakfast at 123:00 in the room 123:456"))
 
 // questions for next C&C:
 // What does a testrunner do?
+
+// There are three towers. The objective of the game is to move all the disks over to tower #3, 
+// but you can't place a larger disk onto a smaller disk.
+
+function hanoi(x, from, aux, to, counter){
+    if(x==1){
+        counter = counter + 1
+       console.log(`Move disc 1 from ${from} to ${to}. counter: ${counter}`)
+       return counter
+     }
+     else{
+        counter = hanoi(x-1,from,to,aux, counter)
+        counter = counter + 1
+        console.log(`Move disc ${x} from ${from} to ${to}. counter: ${counter}.`)
+        counter = hanoi(x-1,aux,from,to, counter);
+        return counter
+     } 
+}
+
+//console.log(hanoi(5, "a", "b", "c"))
+hanoi(3, "a", "b", "c", counter=0)
